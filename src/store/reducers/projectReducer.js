@@ -6,7 +6,16 @@ const initialState = {
   ]
 }
 const projectReducer = (state = initialState, action) => {
-  return state
+  switch (action) {
+    case 'CREATE_PROJECT':
+      console.log('created project', action.project)
+      return state
+    case 'CREATE_PROJECT_ERROR':
+      console.log('error created', action.error)
+      return state
+    default:
+      return state
+  }
 }
 
 export default projectReducer
